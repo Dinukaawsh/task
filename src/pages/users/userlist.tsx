@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// Define the shape of a User object
+
 interface User {
   _id: string;
   name: string;

@@ -4,7 +4,7 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 const UpdateUserForm = () => {
   const router = useRouter();
-  const { id } = router.query; // Get the id from the URL
+  const { id } = router.query; 
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -15,7 +15,7 @@ const UpdateUserForm = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
-  // Don't fetch user data if the ID is not yet available
+  
   useEffect(() => {
     if (!id) return; // If ID is not yet available, skip the fetch
 

@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import seedAdminUser from '@/utils/seedAdminUser';  
 
 const MONGO_URI = process.env.MONGO_URI || '';
 console.log('MONGO_URI:', MONGO_URI);
@@ -19,6 +20,10 @@ const dbConnect = async () => {
     await mongoose.connect(MONGO_URI);
     isConnected = true;
     console.log('MongoDB Connected');
+
+    // Seed admin user after successful connection
+    await seedAdminUser();
+
   } catch (error) {
     console.error('MongoDB connection error:', error);
     process.exit(1);

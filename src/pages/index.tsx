@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { useRouter } from "next/router"; // Import useRouter for navigation
+import { useRouter } from "next/router"; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 const UserForm = () => {
   const [name, setName] = useState("");
@@ -35,7 +35,7 @@ const UserForm = () => {
           "https://api.cloudinary.com/v1_1/ditrw5sb5/image/upload", // Cloudinary API URL
           formData
         );
-        const data = cloudinaryResponse.data as { secure_url: string }; // Define the expected type
+        const data = cloudinaryResponse.data as { secure_url: string }; 
         imageUrl = data.secure_url; // Get the URL of the uploaded image
       } catch (error) {
         console.error("Error uploading image:", error);
